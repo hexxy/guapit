@@ -1,0 +1,99 @@
+{# src/Blogger/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<div class="slider">
+    <img src="/img/ban1.png" width="100%">
+</div>
+
+<div class="center-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <h2>Кто?</h2>
+                <div class="thumb-pad1">
+                    <div class="thumbnail">
+                        <p>Если ты студент любого российского ВУЗа и у тебя есть классная идея для мобильного приложения, веб решения или нового фирменного стиля ГУАП, или ты уверенный программист или дизайнер, или тебе просто интересно как правильно начать собственный бизнес в ИКТ сфере - это событие для тебя!</p>
+                    </div>
+                </div>
+
+                <h2>Зачем?</h2>
+                <div class="thumb-pad1">
+                    <div class="thumbnail">
+                        <p>Новые знакомства, свежие идеи, призы, признание, а также возможность создать что-то особенное.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="row">
+                    <div class="col-lg-11 col-md-12 col-sm-12 col-lg-offset-1">
+                        <h2>Что?</h2>
+                        <div class="thumb-pad1">
+                            <div class="thumbnail">
+                                <p>Школа ИКТ Стартапов ГУАП включает в себя множество мероприятий:</p>
+                                <p>1.	Профессиональные лекции, тренинги и семинары посвященный развитию стартапов, созданию собственного бизнеса, а также дизайну, мобильной и веб разработке.</p>
+                                <p>2. Соревнование инновационных мобильных приложений и интернет-решений.</p>
+                                <p>3.	Конкурс на разработку нового айдентики (фирменного стиля) ГУАП (или отдельных его факультетов и институтов).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="{{ path('guapit_public_contest') }}" class="btn-default btn2" style="text-align:center; margin-left:-60px;">Подробнее</a>
+        </div>
+    </div>
+</div>
+
+<div class="offers-box indent">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Мероприятия</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="thumb-pad2">
+                            <div class="thumbnail">
+                                <figure><img src="/img/page1_symbol1.png" alt=""></figure>
+                                <div class="caption">
+                                    <p class="title1">Соревнование инновационных мобильных приложений и интернет-решений</p>
+
+                                </div>
+                                <p>Соревнование направлено на выявление перспективных идей для дальнейшего развития и поиска инвестиций, вовлечение студентов в инновационную предпринимательскую деятельность.</p>
+                            </div>
+                        </div>
+                        <a href="{{ path('guapit_public_mobile_rules') }}" class="btn-default btn2">Подробнее</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="thumb-pad2">
+                            <div class="thumbnail">
+                                <figure><img src="/img/page1_symbol2.png" alt=""></figure>
+                                <div class="caption">
+                                    <p class="title1">Конкурс на разработку новой айдентики ГУАП</p>
+                                </div>
+                                <p>Новые времена требуют нового взгляда на фирменный стиль ГУАП. Предложить новый стиль ГУАП может любой желающий. Победитель конкурса примет участие в ребрендинге ГУАП и так же получит специальный приз от ГУАП.</p>
+                            </div>
+                        </div>
+                        <a href="{{ path('guapit_public_id_rules') }}" class="btn-default btn2">Подробнее</a>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6">
+                        <div class="thumb-pad2">
+                            <div class="thumbnail">
+                                <figure><img src="/img/page1_symbol3.png" alt=""></figure>
+                                <div class="caption">
+                                    <p class="title1">Профессиональные лекции, тренинги и семинары </p>
+
+                                </div>
+                                <p>Лекции проведут, представители различных IT компаний. Посвящены  они будут развитию стартапов, созданию собственного бизнеса, а также дизайну, мобильной и веб разработке.</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-default btn2">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

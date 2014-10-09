@@ -1,0 +1,70 @@
+{# src/Blogger/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<div class="center-box">
+    <div class="container" >
+        <div class="row" style="width:822px;margin:0 auto">
+
+            <h2>Управление проектом</h2>
+
+            <div style="margin: 0 auto;" class="row">
+            <form method="post" action="{{ path('guapit_public_project_edit') }}" id="contact-form">
+
+                {% if project is null %}
+
+                    <fieldset>
+                        <label style="width: 100%;" class="phone form-div-1">
+                            <select name="type">
+                                <option value="0">Выберите конкурс</option>
+                                <option value="1">Соревнование инновационных мобильных приложений и интернет-решений</option>
+                                <option value="2">Конкурс на разработку новой айдентики ГУАП</option>
+                            </select>
+                        </label>
+                        <label style="width: 100%;" class="email form-div-1">
+                            <input type="text" value="" placeholder="Название проекта" name="name">
+                        </label>
+                        <label style="width: 100%;" class="phone form-div-3">
+                            <textarea placeholder="Описание проекта" name="description"></textarea>
+                        </label>
+                        <div style="width:100%">
+                            <div style="text-align: left; float: left;"><a class="btn-default btn2" id="saveme" href="#">Сохранить</a>  </div>
+                            <div style="text-align: right;"><a class="btn-default btn2" id="cancel" href="{{ path('guapit_public_cabinet') }}">Отмена</a>  </div>
+                        </div>
+                    </fieldset>
+                {% else %}
+                    <fieldset>
+                        <label style="width: 100%;" class="phone form-div-1">
+                            <select name="type">
+                                <option value="0">Выберите конкурс</option>
+                                <option value="1" {% if project.getType() == 1 %} selected="selected" {% endif %}>Соревнование инновационных мобильных приложений и интернет-решений</option>
+                                <option value="2" {% if project.getType() == 2 %} selected="selected" {% endif %}>Конкурс на разработку новой айдентики ГУАП</option>
+                            </select>
+                        </label>
+                        <label style="width: 100%;" class="email form-div-1">
+                            <input type="text" value="{{ project.getName() }}" placeholder="Название проекта" name="name">
+                        </label>
+                        <label style="width: 100%;" class="phone form-div-3">
+                            <textarea placeholder="Описание проекта" name="description">{{ project.getDescription() }}</textarea>
+                        </label>
+                        <div style="width:100%">
+                            <div style="text-align: left; float: left;"><a class="btn-default btn2" id="saveme" href="#">Сохранить</a>  </div>
+                            <div style="text-align: right;"><a class="btn-default btn2" id="cancel" href="{{ path('guapit_public_cabinet') }}">Отмена</a>  </div>
+                        </div>
+                        <input type="hidden" name="project_id" value="{{ project.getId() }}" />
+                    </fieldset>
+                {% endif %}
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript">
+        $("#saveme").click(function () {
+            $("#contact-form").submit();
+        });
+
+    </script>
+{% endblock %}

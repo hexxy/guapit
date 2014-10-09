@@ -1,0 +1,36 @@
+{# src/Blogger/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+<div class="center-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <h2>Вход</h2>
+                <div class="row" style="margin: 0 auto;">
+                    <form id="contact-form" action="{{ path('guapit_public_login_check') }}" method="post">
+                        <fieldset>
+                            <label class="email form-div-1" style="width: 100%;">
+                                <input type="text" name="email" placeholder="Email" value="" />
+                            </label>
+                            <label class="phone form-div-3" style="width: 100%;">
+                                <input type="password" name="password" placeholder="Пароль" value="" />
+                            </label>
+                            <div style="width=100%">
+                                <a href="#" id="login" class="btn-default btn2">Войти</a>
+                            </div>
+                        </fieldset>
+                        <input type="hidden" name="save" value="1">
+                    </form>
+                </div>
+                <div style="padding-top: 20px;">
+                    <a href="{{ path('guapit_public_registration') }}" style="display:inline-block; margin:0 20px">Регистрация</a>
+                    <a href="{{ path('guapit_public_remind_pass') }}">Забыли пароль?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

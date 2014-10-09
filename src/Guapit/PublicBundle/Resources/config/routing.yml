@@ -1,0 +1,88 @@
+guapit_public_homepage:
+    path:     /
+    defaults: { _controller: GuapitPublicBundle:Index:index }
+
+guapit_public_contest:
+    path:     /contest
+    defaults: { _controller: GuapitPublicBundle:Index:contest }
+
+guapit_public_mobile_rules:
+    path:     /mobile-rules
+    defaults: { _controller: GuapitPublicBundle:Index:mobileRules }
+
+guapit_public_id_rules:
+    path:     /id-rules
+    defaults: { _controller: GuapitPublicBundle:Index:idRules }
+
+guapit_public_404:
+    path:     /404
+    defaults: { _controller: GuapitPublicBundle:Index:notFound }
+
+guapit_public_forbidden:
+    path:     /forbidden
+    defaults: { _controller: GuapitPublicBundle:Index:forbidden }
+
+guapit_public_program:
+    path:     /program
+    defaults: { _controller: GuapitPublicBundle:Index:program }
+
+guapit_public_contacts:
+    path:     /contacts
+    defaults: { _controller: GuapitPublicBundle:Index:contacts }
+
+guapit_public_reg_success:
+    path:     /registration/success
+    defaults: { _controller: GuapitPublicBundle:Registration:success }
+
+
+guapit_public_registration:
+    path:     /registration
+    defaults: { _controller: GuapitPublicBundle:Registration:index }
+
+guapit_public_account_create:
+    path:     /registration/create
+    defaults: { _controller: GuapitPublicBundle:Registration:create }
+
+
+guapit_public_login:
+    path:     /login
+    defaults: { _controller: GuapitPublicBundle:Login:index }
+
+guapit_public_logout:
+    path:     /logout
+    defaults: { _controller: GuapitPublicBundle:Login:logout }
+
+guapit_public_login_check:
+    path:     /login/login
+    defaults: { _controller: GuapitPublicBundle:Login:login }
+
+guapit_public_remind_pass:
+    path:     /login/remind
+    defaults: { _controller: GuapitPublicBundle:Login:remind }
+
+
+guapit_public_cabinet:
+    path:     /cabinet
+    defaults: { _controller: GuapitPublicBundle:Cabinet:index }
+
+guapit_public_participants:
+    path:     /cabinet/participants
+    defaults: { _controller: GuapitPublicBundle:Cabinet:participants }
+
+guapit_public_project_edit:
+    path:     /cabinet/project/edit
+    defaults: { _controller: GuapitPublicBundle:Cabinet:editProject }
+
+guapit_public_project:
+    path:     /cabinet/project/id/{id}
+    defaults: { _controller: GuapitPublicBundle:Cabinet:project }
+
+guapit_public_project_add_user:
+    path:     /cabinet/project/add-user/
+    defaults: { _controller: GuapitPublicBundle:Cabinet:addUser }
+
+
+
+guapit_public_view_user:
+    path:     /cabinet/member/view/{id}
+    defaults: { _controller: GuapitPublicBundle:Cabinet:view }

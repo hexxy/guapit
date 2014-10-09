@@ -1,0 +1,109 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <div class="center-box">
+	<div class="container" >
+    	<div class="row" style="width:600px;margin:20px auto">
+			<h2>Участники</h2>
+
+<!--
+            <form id="contact-form" action="/test/index.php" method="post">
+                        <fieldset>
+                            <label class="form-div-1" style="width: 45%;">
+                                <input type="text" name="university" value="Начните вводить название ВУЗа"/>
+                            </label>
+                            <label class="form-div-2" style="width: 45%;">
+                                <select name="role">
+                                    <option value="0">Роль</option>
+                                    <option value="2">Разработчик</option>
+                                    <option value="3">Дизайнер</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                    </form>
+            <div>
+-->
+            {% if participants is empty %}
+                <h2>Подходящих участников не найдено</h2>
+            {% else %}
+                {% for user in participants %}
+                    <div class="thumb-pad2">
+                        <div class="thumbnail">
+                            <figure><img src="/img/part.png" alt=""></figure>
+                            <div class="caption">
+                                <a href="#" style="display:inline-block"><p class="title1">{{ user.getFirstName() }} {{ user.getLastName() }}</p></a>
+                                {% if projects %}
+                                    {% if user.getId() in projects_users %}
+                                        <span style="margin-left:60px; display:inline-block; height:30px" >Участвует в проекте</span>
+                                    {% else %}
+                                        <a href="#" style="margin-left:60px; display:inline-block; height:30px" class="add-to-project">Пригласить в проект</a>
+                                    {% endif %}
+                                {% endif %}
+                                <input type="hidden" name="user_id" value="{{ user.getId() }}">
+                            </div>
+                            <p>{% if user.getRoleId() == 2 %} Разработчик {% else %} Дизайнер {% endif %}, {{ user.getUniversity() }}</p>
+                            <p><span style="color:#0E0552">О себе:</span> {{ user.getAbout() }}</p>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+                            
+    </div>
+</div>
+
+<div id="add-popup" style="display: none;">
+    <div style="display: block;" class="back-in"></div>
+    <div style="width: 571px;margin-left: -285px;" class="popup-small">
+        <button type="button" id="close-add-popup" style="border: 0px;float:right;"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <div style="height:77px;" class="head-popup">
+            <h2>Добавление участника проекта</h2>
+        </div>
+        <div style="text-align: center;" class="popup-cont">
+
+            <div style="margin: 0 auto;" class="row">
+                <form method="post" action="{{ path('guapit_public_project_add_user') }}" id="contact-form" class='add-user-form'>
+                    <fieldset>
+                        <label style="width: 100%;" class="form-div-1">
+                        {% if projects %}
+                            <select name="project_id">
+                                {% for project in projects %}
+                                    <option value="{{ project.getId() }}">{{ project.getName() }}</option>
+                                {% endfor %}
+                            </select>
+                        {% endif %}
+                        </label>
+
+                        <div style="width=100%">
+                            <a class="btn-default btn2" id="add-user-button" href="#">Добавить</a>
+                        </div>
+                    </fieldset>
+                    <input id="user_id" type="hidden" value="" name="user_id">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $("li#participants").addClass('active-main');
+
+    $(".add-to-project").click(function () {
+        var user_id = $(this).next().val();
+        $("#user_id").val(user_id);
+        $("#add-popup").show();
+    });
+
+    $("#add-user-button").click(function () {
+       $(".add-user-form").submit();
+    });
+
+    $("#close-add-popup").click(function () {
+        $("#add-popup").hide();
+        return false;
+    });
+</script>
+{% endblock %}

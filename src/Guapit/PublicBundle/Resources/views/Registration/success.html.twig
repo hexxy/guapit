@@ -1,0 +1,17 @@
+{# src/Blogger/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="global indent">
+        <div class="formBox">
+            <div class="container">
+                <div class="row" style="width:822px;margin: 0 auto;">
+                    <h2 class="indent">Вы были успешно зарегистрированы на GUAP IT Start Up School!</h2>
+                    <p>Поздравляем с успешной регистрацией! Теперь вы можете воспользоваться <a href="{{ path('guapit_public_login') }}">формой Входа</a> и приступить к
+                    созданию своего проекта или поиска того, в котором вы хотели бы принять участие</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

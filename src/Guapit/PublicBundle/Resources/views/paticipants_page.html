@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<title>Home</title>
+
+<meta charset="utf-8"> 
+<style>
+	@font-face{
+		font-family:agenfbcyr;
+		src:url('fonts/agenfbcyr.ttf');
+	}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+
+<meta name="description" content="Your description">
+
+<meta name="keywords" content="Your keywords">
+
+<meta name="author" content="Your name">
+
+<meta name = "format-detection" content = "telephone=no" />
+
+<!--CSS-->
+
+<link rel="stylesheet" href="css/bootstrap.css" >
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/contact-form.css">
+
+</head>
+
+<body>
+
+<!--header-->
+
+<header>
+<div class="container" style="text-align:center; width:45%">
+				
+                
+
+                <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix" role="navigation">
+
+                    <ul class="nav sf-menu clearfix">
+
+                      <li class="active"><a href="#" class="btn">О школе</a></li>
+
+                      <li><a href="#">Соревнование</a></li>
+
+                      <li><a href="#">Конкурс</a></li>
+
+                      <li><a href="#">Программа</a></li>
+
+                      <li><a href="#">Контакты</a></li>
+
+                    </ul>
+
+                </nav>
+            </div>
+
+    <div class="hed" style="min-height:50px; padding:10px 50px; position:relative">
+        <a href="/" style="float:left"><img src="img/logo.png" alt="" width="250"></a>
+        <a href="/" style="float:right"><img src="img/data.png" alt="" width="250"></a>
+        <div style="text-align:center">
+            <a href="/"><img src="img/lk1.png" alt="" width="60"></a>
+            <h2 style="margin-bottom:10px">Сан Саныч</h2>
+            <ul class="main-menu" style="margin-top:0px">
+            <li><a href="#company" >Проекты</a></li>
+            <li><a href="#services">Анкета</a></li>
+            <li  class="active-main"><a href="#team">Участники</a></li>
+            <li><a href="#team">Выход</a></li>
+        </ul>
+        </div>
+    </div>
+	<img src="img/line-bg01.png" width="100%">
+</header>
+
+<div class="center-box">
+	<div class="container" >
+    	<div class="row" style="width:600px;margin:20px auto">
+			<h2>Участники</h2>
+            <form id="contact-form" action="/test/index.php" method="post">
+                        <fieldset>
+                            <label class="form-div-1" style="width: 45%;">
+                                <select name="university">
+                                    <option value="0">Выберите вуз</option>
+                                    <option value="1">ГУАП</option>
+                                    <option value="2">Политех</option>
+                                </select>
+                            </label>
+                            <label class="form-div-2" style="width: 45%;">
+                                <select name="role">
+                                    <option value="0">Роль</option>
+                                    <option value="1">Автор идеи</option>
+                                    <option value="2">Разработчик</option>
+                                    <option value="2">Дизайнер</option>
+                                </select>
+                            </label>
+                            <div style="text-align:center; margin-bottom:50px"><a href="#" id="filter" class="btn-default btn2">Фильтровать</a>  </div>
+                        </fieldset> 
+                        <input type="hidden" name="save" value="1">
+                    </form>
+            <div>
+                 
+                            <div class="thumb-pad2">
+                                <div class="thumbnail">
+                                    <figure><img src="img/part.png" alt=""></figure>
+                                    <div class="caption">
+                                        <a href="#" style="display:inline-block"><p class="title1">Иван Иванов</p></a>
+                                        <a href="#" style="margin-left:60px; display:inline-block; height:30px">Пригласить в проект</a>
+                                    </div>
+                                    <p>Роль в проекте, ВУЗ</p>
+                                    <p><span style="color:#0E0552">О себе:</span> Студент такого то ВУЗа, имею опыт различных разработок</p>
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="thumb-pad2">
+                                <div class="thumbnail">
+                                    <figure><img src="img/part.png" alt=""></figure>
+                                    <div class="caption">
+                                        <a href="#" style="display:inline-block"><p class="title1">Иван Иванов</p></a>
+                                        <a href="#" style="margin-left:60px; display:inline-block; height:30px">Пригласить в проект</a>
+                                    </div>
+                                    <p>Роль в проекте, ВУЗ</p>
+                                    <p><span style="color:#0E0552">О себе:</span> Студент такого то ВУЗа, имею опыт различных разработок</p>
+                                </div>
+                            </div>
+                      </div>
+    </div>
+</div>
+
+<!--footer-->
+
+<footer>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <p>&copy; <em id="copyright-year"></em> <a href="http://guap.ru">ГУАП</a></p>
+
+            </div>
+            <div style="text-align:left; padding:0 50px">
+            	<a href="#" style="display:inline-block; margin:20px 20px">Положение о Школе</a>
+                <a href="#">Контакты</a>
+            </div>
+
+        </div>
+
+        <div class="top-box"></div>
+
+    </div>
+
+  <!-- {%FOOTER_LINK} -->
+
+</footer>
+
+</body>
+
+</html>

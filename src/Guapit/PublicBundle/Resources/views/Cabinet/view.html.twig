@@ -1,0 +1,52 @@
+{# src/Blogger/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <div class="center-box">
+        <div class="container" >
+            <div class="row" style="width:822px;margin:0 auto">
+                <h2>Карточка пользователя</h2>
+                <div>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>ФИО</th>
+                            <td>{{ user.getFirstName() }} {{ user.getLastName() }} </td>
+                        </tr>
+                        <tr>
+                            <th>Университет</th>
+                            <td>{{ user.getUniversity() }} </td>
+                        </tr>
+                        <tr>
+                            <th>Специальность</th>
+                            <td>{{ user.getSpeciality() }} </td>
+                        </tr>
+                        <tr>
+                            <th>Курс</th>
+                            <td>{{ user.getCourse() }} </td>
+                        </tr>
+                        <tr>
+                            <th>Роль</th>
+                            <td>
+                                {% if user.getRoleId() == 1 %}
+                                    Автор идеи
+                                {% endif %}
+                                {% if user.getRoleId() == 2 %}
+                                    Разработчик
+                                {% endif %}
+                                {% if user.getRoleId() == 3 %}
+                                    Дизайнер
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>О себе</th>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

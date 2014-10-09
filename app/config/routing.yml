@@ -1,0 +1,4 @@
+_welcome:
+    resource: "@GuapitPublicBundle/Resources/config/routing.yml"
+    prefix:     /
+

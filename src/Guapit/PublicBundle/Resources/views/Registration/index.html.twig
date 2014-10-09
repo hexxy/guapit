@@ -1,0 +1,72 @@
+{# src/Blogger/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="global indent">
+        <div class="formBox">
+            <div class="container">
+                <div class="row" style="width:822px;margin: 0 auto;">
+                    <h2 class="indent">Регистрационная анкета</h2>
+                    <form id="contact-form" action="{{ path('guapit_public_account_create') }}" method="post">
+                        <div class="contact-form-loader"></div>
+                        <fieldset>
+                            <h5>Аккаунт</h5>
+                            <label class="email form-div-2">
+                                <input type="text" name="email" placeholder="Email" value="" />
+                            </label>
+
+                            <label class="email form-div-2">
+                                <input type="password" name="password" placeholder="Пароль" value="" />
+                            </label>
+                            <label class="email form-div-2">
+                                <input type="password" name="password_repeat" placeholder="Повторите пароль" value="" />
+                            </label>
+
+                            <h5>Информация об участнике</h5>
+                            <label class="name form-div-1">
+                                <input type="text" name="last_name" placeholder="Фамилия" />
+                            </label>
+                            <label class="name form-div-3">
+                                <input type="text" name="first_name" placeholder="Имя" />
+                            </label>
+                            <label class="message form-div-4">
+                                <textarea name="university" placeholder="Название университета"></textarea>
+                            </label>
+                            <label class="message form-div-4">
+                                <textarea name="speciality" placeholder="Специальность"></textarea>
+                            </label>
+                            <label class="email form-div-1">
+                                <input type="text" name="course" placeholder="Курс" value="" />
+                            </label>
+                            <label class="phone form-div-3">
+                                <select name="role">
+                                    <option value="0">Предполагаемая роль в проекте</option>
+                                    <option value="1">Автор идеи</option>
+                                    <option value="2">Разработчик</option>
+                                    <option value="3">Дизайнер</option>
+                                </select>
+                            </label>
+                            <label class="phone form-div-3">
+                                <input type="text" name="phone" placeholder="Телефон" value="" />
+                            </label>
+                            <label class="message form-div-4">
+                                <textarea name="about" placeholder="О себе"></textarea>
+                            </label>
+                            <div style="width=100%">
+                                <a href="#" id="regme" class="btn-default btn2">Зарегистрироваться</a>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $("#regme").click(function () {
+            $("#contact-form").submit();
+        });
+
+    </script>
+
+{% endblock %}
